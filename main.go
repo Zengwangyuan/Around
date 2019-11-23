@@ -3,12 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/pborman/uuid"
 	elastic "gopkg.in/olivere/elastic.v3"
 	"log"
 	"net/http"
 	"reflect"
 	"strconv"
-	"github.com/pborman/uuid"
 )
 
 const (
@@ -19,7 +19,7 @@ const (
 	//PROJECT_ID = "around-xxx"
 	//BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
-	ES_URL = "http://35.192.138.112:9200/"
+	ES_URL = "http://146.148.45.87:9200/"
 )
 
 func main() {
@@ -113,7 +113,6 @@ func saveToES(p *Post, id string) {
 
 	fmt.Printf("Post is saved to Index: %s\n", p.Message)
 }
-
 
 func handlerSearch(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Received one request for search")
